@@ -1,12 +1,15 @@
 ENGINE.Assets = function(loader) {
 
+  /* make use of the loader that we already have */
   this.loader = loader;
 
+  /* lookup directories so we don't have to provide full paths every time */
   this.paths = {
 	images: "assets/images/",
 	audio: "assets/audio/"
   };
 
+  /* here we will hold the raw assets */
   this.data = {
 	images: [],
 	sprites: [],
@@ -15,6 +18,11 @@ ENGINE.Assets = function(loader) {
 };
 
 ENGINE.Assets.prototype = {
+
+  /* get image by key - key is created by removing extension from filename for example
+             units/tank.png
+     becomes units/tank
+  */
 
   image: function(key) {
 	return this.data.images[key];
@@ -28,10 +36,11 @@ ENGINE.Assets.prototype = {
 	var sprite = {
 	  image: this.data.images[key],
 	  data: this.data.sprites[key]
-	}
+	};
 	return sprite
   },
 
+  /* add many images */
   addImages: function(filenames) {
 	for (var i = 0; i < filenames.length; i++) {
 	  this.addImage(filenames[i]);
@@ -45,12 +54,20 @@ ENGINE.Assets.prototype = {
 	}
   },
 
+  /* add one image */
   addImage: function(filename) {
-
 	var image = new Image;
+
+	/* pass the image to the loader */
 	this.loader.image(image);
+
+	/* we gonna rip off extension */
 	var key = filename.match(/(.*)\..*/)[1];
+
+	/* add image to the assets */
 	this.data.images[key] = image;
+
+	/* lets search for image in defined path */
 	image.src = this.paths.images + filename;
 
   },
