@@ -1,5 +1,6 @@
 var app = new ENGINE.Application({
 
+  /* get width and height of a window */
   width: 632,
   height: 660,
 
@@ -11,6 +12,7 @@ var app = new ENGINE.Application({
 	console.log(this)
   },
 
+  /* and when the assets are loaded select the game screen */
   onready: function() {
 	this.layer.drawImage(this.assets.image("bg"), 0, 0);
 	this.selectScene(this.intro);

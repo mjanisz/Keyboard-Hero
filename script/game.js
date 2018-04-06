@@ -1,11 +1,19 @@
 app.game = new ENGINE.Scene({
 
-	oncreate: function() {  
+  /* this is actually called immediately as this object is created
+     so no assets are ready - but since we are using rectangles
+     we can execute everything at once
+  */
+
+	oncreate: function() {
+    /* create new collection of entities */
+
 		this.entities = new ENGINE.Collection(this);
 		this.notes = new ENGINE.Collection(this);
 		this.list = new ENGINE.List();
 	},
 
+  /* initiates game */
 	onenter: function() {
 		var parent = this;
 		this.music = app.assets.audio("ratatat");
@@ -130,13 +138,13 @@ app.game = new ENGINE.Scene({
 				color = 'orange';
 				break;
 			case 1:
-				color ='green'
+				color ='green';
 				break;
 			case 2:
-				color = 'red'
+				color = 'red';
 				break;
 			case 3:
-				color = 'purple'
+				color = 'purple';
 				break;
 		}
 		return color
