@@ -1,5 +1,6 @@
 /*
- Stores information about graphical data and their position on the browser
+ Targets pixels from the sprite sheet based on the coordinates given. Stores selected
+ portion and can be referenced from its filename.
 */
 
 ENGINE.Sprites = function(key) {
