@@ -8,6 +8,7 @@ var app = new ENGINE.Application({
   width: 632,
   height: 660,
 
+  /* declare all external assets here */
   oncreate: function() {  
 	this.assets.addSprites("sprites.png", this.sprites.fetch('buttons'));
 	this.assets.addImage("bg.jpg");
