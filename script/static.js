@@ -1,3 +1,8 @@
+/*
+  Draw static images on the page. Args can be used to replace the default parameters that
+  this function has. Example constructor in game.js
+ */
+
 ENGINE.Static = function(args) {
 	_.extend(this,{
 		x: app.width/2,

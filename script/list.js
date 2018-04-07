@@ -1366,7 +1366,7 @@ ENGINE.List = function(args) {
 		bar: 0,
 		lastBarUsed: 0,
 	}, args)
-}
+};
 
 ENGINE.List.prototype = {
 
@@ -1388,4 +1388,4 @@ ENGINE.List.prototype = {
 		this.lastBarUsed = 0;
 		this.bar = 0;
 	}
-}
+};

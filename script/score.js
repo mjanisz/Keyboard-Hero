@@ -37,4 +37,4 @@ ENGINE.Score.prototype = {
 		this.score += (1 * multiplier);
 	}
 
-}
+};
