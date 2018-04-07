@@ -1,8 +1,7 @@
 app.game = new ENGINE.Scene({
 
   /* this is actually called immediately as this object is created
-     so no assets are ready - but since we are using rectangles
-     we can execute everything at once
+     so no assets are ready
   */
 
 	oncreate: function() {
@@ -16,7 +15,7 @@ app.game = new ENGINE.Scene({
   /* initiates game */
 	onenter: function() {
 		var parent = this;
-		this.music = app.assets.audio("ratatat");
+    this.music = app.assets.audio("ratatat");
 		this.music.play();
 		this.score = this.entities.add(ENGINE.Score, {
 			map: app.assets.sprite("pts").data 
@@ -98,17 +97,24 @@ app.game = new ENGINE.Scene({
 		});
 	},
 
-	checkPress: function(button) {
-		button.bounce();
-		for (var i = 0; i < 3; i++) {
-			if (this.notes[i] && (this.notes[i].y > 570) && (this.notes[i].y < 620) && (this.notes[i].color == button.color)){
-				button.hit.makeVisible();
-				this.notes[i].remove();
-				this.score.increase(this.chain.multiplier);
-				this.chain.increase();
-			}
-		}
-	},
+  checkPress: function (button) {
+    button.bounce();
+    var isNoteHit = false; //checks if a note was hit at a valid key press
+
+    for (var i = 0; i < 3; i++) {
+      if (this.notes[i] && this.notes[i].y > 570 && this.notes[i].y < 620 && this.notes[i].color == button.color) {
+        button.hit.makeVisible();
+        this.notes[i].remove();
+        isNoteHit = true;
+        this.score.increase(this.chain.multiplier);
+        this.chain.increase();
+      }
+    }
+    if(!isNoteHit)
+    {
+      this.chain.miss();
+    }
+  },
 
 	createNote: function() {
 		if(this.list.bar < this.list.song.length) {
