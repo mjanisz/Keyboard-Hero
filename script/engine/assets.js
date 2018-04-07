@@ -48,7 +48,7 @@ ENGINE.Assets.prototype = {
   },
 
   addSprites: function(sprite, atlas) {
-	this.addImage(sprite)
+	this.addImage(sprite);
 	for (var i=0; i < atlas.length; i++) {
 	  this.addSprite(atlas[i], sprite);
 	}
