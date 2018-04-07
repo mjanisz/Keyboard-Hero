@@ -82,11 +82,7 @@ app.songselect = new ENGINE.Scene({
    */
   findSelectedSong: function (x, y) {
     for (var index in this.songNumbers) {
-      number = this.songNumbers[index];
-      if (x > number.x - number.map.frame.w / 2 &&
-        x < number.x + number.map.frame.w / 2 &&
-        y > number.y - number.map.frame.h / 2 &&
-        y < number.y + number.map.frame.h / 2)
+      if (isButtonClicked(x, y, this.songNumbers[index]))
       {
         console.log("song index - " + index);
         return index;
@@ -95,4 +91,4 @@ app.songselect = new ENGINE.Scene({
     return null;
   }
 }
-)
+);
