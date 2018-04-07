@@ -1,3 +1,7 @@
+/*
+ Stores information about graphical data and their position on the browser
+*/
+
 ENGINE.Sprites = function(key) {
 	this.sprites = {
 		data: []
@@ -203,8 +207,128 @@ ENGINE.Sprites = function(key) {
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
 	"sourceSize": {"w":175,"h":61}
-}]
-
+},
+{
+  "filename": "back.png",
+  "frame": {"x":442,"y":412,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song1.png",
+  "frame": {"x":442,"y":474,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song2.png",
+  "frame": {"x":442,"y":537,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song3.png",
+  "frame": {"x":442,"y":602,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song4.png",
+  "frame": {"x":442,"y":666,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song5.png",
+  "frame": {"x":621,"y":412,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song6.png",
+  "frame": {"x":621,"y":474,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song7.png",
+  "frame": {"x":621,"y":537,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song8.png",
+  "frame": {"x":621,"y":602,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song9.png",
+  "frame": {"x":621,"y":666,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song10.png",
+  "frame": {"x":805,"y":412,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song11.png",
+  "frame": {"x":805,"y":474,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song12.png",
+  "frame": {"x":805,"y":535,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song13.png",
+  "frame": {"x":805,"y":603,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+},
+{
+  "filename": "song14.png",
+  "frame": {"x":805,"y":666,"w":175,"h":61},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":175,"h":61},
+  "sourceSize": {"w":175,"h":61}
+}
+]
 }
 
 ENGINE.Sprites.prototype = {
