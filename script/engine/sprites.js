@@ -106,7 +106,7 @@ ENGINE.Sprites = function(key) {
 },
 {
 	"filename": "orange-hit.png",
-	"frame": {"x":529,"y":260,"w":106,"h":162},
+	"frame": {"x":529,"y":260,"w":106,"h":136},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":106,"h":162},
