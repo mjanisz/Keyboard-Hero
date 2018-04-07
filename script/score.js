@@ -1,3 +1,6 @@
+/*
+  Handles the logic behind keeping score of a player's performance
+ */
 ENGINE.Score = function(args) {
 	_.extend(this,{
 		x: app.width/2,

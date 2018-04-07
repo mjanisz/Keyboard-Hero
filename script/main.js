@@ -1,3 +1,7 @@
+/*
+  This file initializes external assets and directs the user to
+  the intro scene
+ */
 var app = new ENGINE.Application({
 
   /* get width and height of a window */

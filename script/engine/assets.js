@@ -1,3 +1,7 @@
+/*
+  Handles referencing files from the assets folder.
+ */
+
 ENGINE.Assets = function(loader) {
 
   /* make use of the loader that we already have */

@@ -1,3 +1,6 @@
+/*
+  Initial Scene
+ */
 app.intro = new ENGINE.Scene({
 
 	oncreate: function(){

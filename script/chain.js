@@ -1,3 +1,7 @@
+/*
+  Handles logic behind a note hitting chain and its multiplier
+ */
+
 ENGINE.Chain = function(args) {
 	_.extend(this, {
 		x: 561,

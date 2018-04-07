@@ -1,3 +1,6 @@
+/*
+  Result Scene and the end of a song.
+ */
 app.results = new ENGINE.Scene({
 
 	oncreate: function(){
