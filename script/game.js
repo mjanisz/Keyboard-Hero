@@ -76,7 +76,7 @@ app.game = new ENGINE.Scene({
 		  map: app.assets.sprite("back").data,
       x: 9.45 / 10 * app.width,
       y: 2.1 / 8 * app.height,
-      opacity:1
+      opacity:0   //set this to 1 if you're debugging and need to exit a song immediately
     });
 		this.delayfunction(this.instruction, {
 			fadein: false,
@@ -239,11 +239,7 @@ app.game = new ENGINE.Scene({
 
   onmousedown: function (x, y) {
 	  var button = this.back;
-    if (button.opacity == 1 &&
-      x > button.x - button.map.frame.w / 2 &&
-      x < button.x + button.map.frame.w / 2 &&
-      y > button.y - button.map.frame.h / 2 &&
-      y < button.y + button.map.frame.h / 2)
+    if (button.opacity == 1 && isButtonClicked(x, y, button))
     {
       app.selectScene(app.songselect);
     }
