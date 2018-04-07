@@ -17,9 +17,8 @@ app.intro = new ENGINE.Scene({
 
   onmousedown: function(x, y, button) {
   	if((x > this.startButton.x-this.startButton.map.frame.w/2 && x < this.startButton.x+this.startButton.map.frame.w/2) && (y > this.startButton.y-this.startButton.map.frame.h/2 && y < this.startButton.y+this.startButton.map.frame.h/2)) {
-  		app.selectScene(app.game);
+  	  app.selectScene(app.songselect);
   	}
-  
   },
 
   onleave: function() {
