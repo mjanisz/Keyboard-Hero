@@ -52,6 +52,7 @@ ENGINE.SongManager.prototype = {
 
   getSongList: function(index)
   {
+    //TODO need to create new Lists for each song to match the music
     switch (index)
     {
       case 0:

@@ -4,7 +4,7 @@ Keyboard-Hero
 My old HTML5 uni assignment, ported to an easy working engine
 
 This game is based on the engine from tutorials by [Rezoner](http://trickkr.rezoner.net/item/66/rezoners-games-from-scratch-architecture).
-Play on chrome (Sry FF, start allowing mp3!) !
+Tested on recent versions of Chrome, FireFox, and Safari.
 
 Enjoy!
 

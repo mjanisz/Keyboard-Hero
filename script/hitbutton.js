@@ -1,3 +1,7 @@
+/*
+  Handles the event when a button is successfully hit
+ */
+
 ENGINE.HitButton = function(args) {
 	_.extend(this,{
 		alpha: 0

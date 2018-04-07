@@ -1,3 +1,7 @@
+/*
+  Handles the logic for the game.
+ */
+
 app.game = new ENGINE.Scene({
 
   /* this is actually called immediately as this object is created

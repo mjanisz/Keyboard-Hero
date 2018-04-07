@@ -1,3 +1,6 @@
+/*
+  Handles selecting different songs from the song select scene.
+ */
 app.songselect = new ENGINE.Scene({
 
   /*

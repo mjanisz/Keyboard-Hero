@@ -1,3 +1,6 @@
+/*
+  Generates the notes for the game screen
+ */
 ENGINE.List = function(args) {
 	_.extend(this, {
 		song: ['1000',

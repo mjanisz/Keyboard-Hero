@@ -1,3 +1,7 @@
+/*
+  Object that handles the different scenes of the game
+ */
+
 ENGINE.Scene = function(args) {
 
   _.extend(this, args);
