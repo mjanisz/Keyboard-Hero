@@ -66,7 +66,7 @@ ENGINE.SongManager.prototype = {
           {
             song: getUnicornNotes(),
             promptDelay: 15200,
-            noteDelay: 11100,
+            noteDelay: 10600,
           }
         );
 
@@ -78,7 +78,7 @@ ENGINE.SongManager.prototype = {
           {
             song: getStandByMeNotes(),
             promptDelay: 15200,
-            noteDelay: 11100,
+            noteDelay: 11000,
           }
         );
 
@@ -89,8 +89,8 @@ ENGINE.SongManager.prototype = {
         return new ENGINE.List(
           {
             song: getLostInFireNotes(),
-            promptDelay: 15200,
-            noteDelay: 11100,
+            promptDelay: 12200,
+            noteDelay: 10500,
           }
         );
 
@@ -101,8 +101,8 @@ ENGINE.SongManager.prototype = {
         return new ENGINE.List(
           {
             song: getFoolMeOnceNotes(),
-            promptDelay: 15200,
-            noteDelay: 11100,
+            promptDelay: 11000,
+            noteDelay: 10250,
           }
         );
 
@@ -113,8 +113,8 @@ ENGINE.SongManager.prototype = {
         return new ENGINE.List(
           {
             song: getGlassTableNotes(),
-            promptDelay: 15200,
-            noteDelay: 11100,
+            promptDelay: 10200,
+            noteDelay: 9200,
           }
         );
 
@@ -125,8 +125,8 @@ ENGINE.SongManager.prototype = {
         return new ENGINE.List(
           {
             song: getChildrenOfNotes(),
-            promptDelay: 15200,
-            noteDelay: 11100,
+            promptDelay: 16200,
+            noteDelay: 13500,
           }
         );
 
@@ -137,8 +137,8 @@ ENGINE.SongManager.prototype = {
         return new ENGINE.List(
           {
             song: getMothersSonNotes(),
-            promptDelay: 15200,
-            noteDelay: 11100,
+            promptDelay: 12200,
+            noteDelay: 10200,
           }
         );
 
@@ -149,8 +149,8 @@ ENGINE.SongManager.prototype = {
         return new ENGINE.List(
           {
             song: getNewWorldNotes(),
-            promptDelay: 15200,
-            noteDelay: 11100,
+            promptDelay: 5200,
+            noteDelay: 4250,
           }
         );
 
@@ -161,8 +161,8 @@ ENGINE.SongManager.prototype = {
         return new ENGINE.List(
           {
             song: getTrumpOfDoomNotes(),
-            promptDelay: 15200,
-            noteDelay: 11100,
+            promptDelay: 5200,
+            noteDelay: 4130,
           }
         );
 
@@ -173,8 +173,8 @@ ENGINE.SongManager.prototype = {
         return new ENGINE.List(
           {
             song: getDonDraperNotes(),
-            promptDelay: 15200,
-            noteDelay: 11100,
+            promptDelay: 14200,
+            noteDelay: 10500,
           }
         );
 
@@ -185,8 +185,8 @@ ENGINE.SongManager.prototype = {
         return new ENGINE.List(
           {
             song: getBreakingBadNotes(),
-            promptDelay: 15200,
-            noteDelay: 11100,
+            promptDelay: 8200,
+            noteDelay: 5400,
           }
         );
 
@@ -197,8 +197,8 @@ ENGINE.SongManager.prototype = {
         return new ENGINE.List(
           {
             song: getNewWorldRemixNotes(),
-            promptDelay: 15200,
-            noteDelay: 11100,
+            promptDelay: 5200,
+            noteDelay: 4130,
           }
         );
 
