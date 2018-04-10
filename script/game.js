@@ -83,21 +83,21 @@ app.game = new ENGINE.Scene({
 			fadeout: true,
 			y: app.height/2 + 200,
 			offset: 200
-		}, 7000);
+		}, this.list.promptDelay / 2);
 		for(var i=0; i<4; i++) {
 			if(i!=3) {
 				this.delayfunction(this.timer, {
 					opacity: 1,
 					text: 3-i
-				}, 8200+i*1000)
+				}, this.list.promptDelay / 2+i*1000)
 			} else {
 				this.delayfunction(this.timer, {
 					opacity: 0,
-				}, 8200+i*1000);
+				}, this.list.promptDelay / 2+i*1000);
 
         this.delayfunction(this.back, {
           opacity: 1,
-        }, 8200+i*1000);
+        }, this.list.promptDelay / 2+i*1000);
       }
 		};
 
@@ -118,7 +118,7 @@ app.game = new ENGINE.Scene({
 		}
 		setTimeout(function(){
 			parent.createNote();
-		}, 11500)
+		}, this.list.noteDelay)
 	},
 
 	delayfunction: function(object, args, time) {
