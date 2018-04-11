@@ -4,7 +4,7 @@
 
 ENGINE.SongManager = function(args) {
   _.extend(this, {
-    index : 0,
+    index : 1,
   }, args)
 }
 
@@ -19,8 +19,6 @@ ENGINE.SongManager.prototype = {
   {
     switch (index)
     {
-      case 0:
-        return "ratatat";
       case 1:
         return "unicorn";
       case 2:
@@ -55,12 +53,6 @@ ENGINE.SongManager.prototype = {
     /*TODO modify files in script/notes to reflect proper music notes when the selected song is being played in the game*/
     switch (index)
     {
-      case 0: // ratatat (uses default values from list.js)
-        return new ENGINE.List();
-
-
-
-
       case 1: // Secret of the Unicorn Queen
         return new ENGINE.List(
           {

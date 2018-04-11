@@ -3,7 +3,7 @@
  */
 ENGINE.List = function(args) {
 	_.extend(this, {
-		song: getRatatatNotes(),
+		song: getUnicornNotes(),
 		bar: 0,
 		lastBarUsed: 0,
     promptDelay: 15200, // delay to use for the how to play and ready countdown messages.

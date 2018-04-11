@@ -13,7 +13,6 @@ var app = new ENGINE.Application({
 	this.assets.addSprites("sprites.png", this.sprites.fetch('buttons'));
 	this.assets.addImage("bg.jpg");
 	this.assets.addImage("logo.png");
-	this.assets.addAudio("ratatat.mp3");
   this.assets.addAudio("unicorn.mp3");
   this.assets.addAudio("standbyme.mp3");
   this.assets.addAudio("lostinfire.mp3");

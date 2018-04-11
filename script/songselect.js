@@ -18,14 +18,14 @@ app.songselect = new ENGINE.Scene({
   songTen:"",
   songEleven:"",
   songTwelve:"",
-  songThirteen:"",
+
   oncreate: function () {
     this.entities = new ENGINE.Collection(this);
     this.w = app.width;
     this.h = app.height;
 
     this.songNumbers = [this.songOne, this.songTwo, this.songThree, this.songFour, this.songFive, this.songSix, this.songSeven, this.songEight,
-      this.songNine, this.songTen, this.songEleven, this.songTwelve, this.songThirteen];
+      this.songNine, this.songTen, this.songEleven, this.songTwelve];
   },
 
   onenter: function () {
@@ -45,7 +45,7 @@ app.songselect = new ENGINE.Scene({
       );
       count++;
 
-      if (count % 8 == 0) {
+      if (count % 7 == 0) {
         wMultiplier++;
         yMultiplier = 1;
       }
@@ -84,8 +84,9 @@ app.songselect = new ENGINE.Scene({
     for (var index in this.songNumbers) {
       if (isButtonClicked(x, y, this.songNumbers[index]))
       {
-        console.log("song index - " + index);
-        return index;
+        var target = parseInt(index) + 1;
+        console.log("song index - " + target);
+        return target;
       }
     }
     return null;
