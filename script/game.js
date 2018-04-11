@@ -15,7 +15,7 @@ app.game = new ENGINE.Scene({
 		this.notes = new ENGINE.Collection(this);
 		this.list = new ENGINE.List();
 		this.songManager = new ENGINE.SongManager();
-		this.song = "ratatat";
+		this.song = "unicorn";
 	},
 
   setSongManagerIndex: function(index)
@@ -95,9 +95,6 @@ app.game = new ENGINE.Scene({
 					opacity: 0,
 				}, this.list.promptDelay / 2+i*1000);
 
-        this.delayfunction(this.back, {
-          opacity: 1,
-        }, this.list.promptDelay / 2+i*1000);
       }
 		};
 
@@ -118,7 +115,11 @@ app.game = new ENGINE.Scene({
 		}
 		setTimeout(function(){
 			parent.createNote();
-		}, this.list.noteDelay)
+		}, this.list.noteDelay);
+
+    this.delayfunction(this.back, {
+      opacity: 1,
+    }, this.list.noteDelay);
 	},
 
 	delayfunction: function(object, args, time) {
