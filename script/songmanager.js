@@ -52,7 +52,7 @@ ENGINE.SongManager.prototype = {
 
   getSongList: function(index)
   {
-    //TODO need to create new Lists for each song to match the music
+    /*TODO modify files in script/notes to reflect proper music notes when the selected song is being played in the game*/
     switch (index)
     {
       case 0: // ratatat (uses default values from list.js)
@@ -64,7 +64,8 @@ ENGINE.SongManager.prototype = {
       case 1: // Secret of the Unicorn Queen
         return new ENGINE.List(
           {
-            song: getUnicornNotes(),
+            song: getUnicornNotes(), // function from file script/notes/unicorn.js modify this file to have music notes represented
+                                     // in the game
             promptDelay: 15200,
             noteDelay: 10600,
           }
