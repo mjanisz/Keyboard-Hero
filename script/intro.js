@@ -18,15 +18,12 @@ app.intro = new ENGINE.Scene({
 		app.layer.drawImage(app.assets.image("logo"), 42, 18);
 	},
 
-  onmousedown: function(x, y, button) {
-  	if((x > this.startButton.x-this.startButton.map.frame.w/2 && x < this.startButton.x+this.startButton.map.frame.w/2) && (y > this.startButton.y-this.startButton.map.frame.h/2 && y < this.startButton.y+this.startButton.map.frame.h/2)) {
-  	  app.selectScene(app.songselect);
-  	}
-  },
+  onmousedown: function(x, y) {
+    if(isButtonClicked(x, y, this.startButton)) app.selectScene(app.songselect);
+  	},
 
   onleave: function() {
   	this.entities.wipe();
   }
 
-
-})
+});
