@@ -1,3 +1,6 @@
+/*
+  Result Scene and the end of a song.
+ */
 app.results = new ENGINE.Scene({
 
 	oncreate: function(){
@@ -51,8 +54,17 @@ app.results = new ENGINE.Scene({
 			fadein: true,
 			opacity: 0,
 			offset: 20,
+      x: app.width / 3,
 			y: app.height/2 + 65
 		});
+    this.backButton = this.entities.add(ENGINE.Static, {
+      map: app.assets.sprite("back").data,
+      fadein: true,
+      opacity: 0,
+      offset: 20,
+      x: app.width /3 * 2,
+      y: app.height/2 + 65
+    });
 	},
 
 	onstep: function(delta) {
@@ -71,6 +83,9 @@ app.results = new ENGINE.Scene({
   		if((x > this.restartButton.x-this.restartButton.map.frame.w/2 && x < this.restartButton.x+this.restartButton.map.frame.w/2) && (y > this.restartButton.y-this.restartButton.map.frame.h/2 && y < this.restartButton.y+this.restartButton.map.frame.h/2)) {
   			app.selectScene(app.game);
   		}
+      if((x > this.backButton.x-this.backButton.map.frame.w/2 && x < this.backButton.x+this.backButton.map.frame.w/2) && (y > this.backButton.y-this.backButton.map.frame.h/2 && y < this.backButton.y+this.backButton.map.frame.h/2)) {
+        app.selectScene(app.songselect);
+      }
   	},
 
   	onleave: function() {

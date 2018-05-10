@@ -1,14 +1,48 @@
+/*
+  Handles the logic for the game.
+ */
+
 app.game = new ENGINE.Scene({
 
-	oncreate: function() {  
+  /* this is actually called immediately as this object is created
+     so no assets are ready
+  */
+
+	oncreate: function() {
+    /* create new collection of entities */
+
 		this.entities = new ENGINE.Collection(this);
 		this.notes = new ENGINE.Collection(this);
 		this.list = new ENGINE.List();
+		this.songManager = new ENGINE.SongManager();
+		this.song = "unicorn";
 	},
 
+  setSongManagerIndex: function(index)
+  {
+    this.songManager = new ENGINE.SongManager(
+      {
+        index: index
+      })
+  },
+
+  setSong: function(song)
+  {
+    this.song = song;
+  },
+
+  setList: function(list)
+  {
+    this.list = list;
+  },
+
+  /* initiates game */
 	onenter: function() {
 		var parent = this;
-		this.music = app.assets.audio("ratatat");
+		this.exitEarly = false;
+		this.songManager.initSong();
+		console.log("getting song " + this.song);
+    this.music = app.assets.audio(this.song);
 		this.music.play();
 		this.score = this.entities.add(ENGINE.Score, {
 			map: app.assets.sprite("pts").data 
@@ -32,24 +66,38 @@ app.game = new ENGINE.Scene({
 			opacity:0,
 			text: "3"
 		});
+    /*
+       There is a bug with exiting a song prematurely caused by the delay function.
+       If the player exits the song before the countdown ends, the timing of the music
+       notes appearing goes out of whack. The current workaround is to make the back button
+       available after this countdown ends.
+     */
+		this.back = this.entities.add(ENGINE.Static, {
+		  map: app.assets.sprite("back").data,
+      x: 9.45 / 10 * app.width,
+      y: 2.1 / 8 * app.height,
+      opacity:0   //set this to 1 if you're debugging and need to exit a song immediately
+    });
 		this.delayfunction(this.instruction, {
 			fadein: false,
 			fadeout: true,
 			y: app.height/2 + 200,
 			offset: 200
-		}, 7000);
+		}, this.list.promptDelay / 2);
 		for(var i=0; i<4; i++) {
 			if(i!=3) {
 				this.delayfunction(this.timer, {
 					opacity: 1,
 					text: 3-i
-				}, 8200+i*1000)
+				}, this.list.promptDelay / 2+i*1000)
 			} else {
 				this.delayfunction(this.timer, {
 					opacity: 0,
-				}, 8200+i*1000)				
-			}
+				}, this.list.promptDelay / 2+i*1000);
+
+      }
 		};
+
 		this.chain = this.entities.add(ENGINE.Chain);
 		parent.orangeControl = this.createControlButton(117 + 46, 615, parent.getColor(0));
 		parent.greenControl = this.createControlButton(217 + 46, 615, parent.getColor(1));
@@ -67,7 +115,11 @@ app.game = new ENGINE.Scene({
 		}
 		setTimeout(function(){
 			parent.createNote();
-		}, 11500)
+		}, this.list.noteDelay);
+
+    this.delayfunction(this.back, {
+      opacity: 1,
+    }, this.list.noteDelay);
 	},
 
 	delayfunction: function(object, args, time) {
@@ -90,17 +142,24 @@ app.game = new ENGINE.Scene({
 		});
 	},
 
-	checkPress: function(button) {
-		button.bounce();
-		for (var i = 0; i < 3; i++) {
-			if (this.notes[i] && (this.notes[i].y > 570) && (this.notes[i].y < 620) && (this.notes[i].color == button.color)){
-				button.hit.makeVisible();
-				this.notes[i].remove();
-				this.score.increase(this.chain.multiplier);
-				this.chain.increase();
-			}
-		}
-	},
+  checkPress: function (button) {
+    button.bounce();
+    var isNoteHit = false; //checks if a note was hit at a valid key press
+
+    for (var i = 0; i < 3; i++) {
+      if (this.notes[i] && this.notes[i].y > 570 && this.notes[i].y < 620 && this.notes[i].color == button.color) {
+        button.hit.makeVisible();
+        this.notes[i].remove();
+        isNoteHit = true;
+        this.score.increase(this.chain.multiplier);
+        this.chain.increase();
+      }
+    }
+    if(!isNoteHit)
+    {
+      this.chain.miss();
+    }
+  },
 
 	createNote: function() {
 		if(this.list.bar < this.list.song.length) {
@@ -130,13 +189,13 @@ app.game = new ENGINE.Scene({
 				color = 'orange';
 				break;
 			case 1:
-				color ='green'
+				color ='green';
 				break;
 			case 2:
-				color = 'red'
+				color = 'red';
 				break;
 			case 3:
-				color = 'purple'
+				color = 'purple';
 				break;
 		}
 		return color
@@ -169,13 +228,21 @@ app.game = new ENGINE.Scene({
 		if(key == "r") this.checkPress(this.purpleControl);
 	},
 
-  	onleave: function() {
-  		app.score = this.score.score;
-  		this.music.pause();
-  		this.music.currentTime = 0;
-  		this.list.reset();
-  		this.entities.wipe();
-  		this.notes.wipe();
-  	}
+  onleave: function() {
+    app.score = this.score.score;
+    this.music.pause();
+    this.music.currentTime = 0;
+    this.back.opacity = 0;
+    this.list.reset();
+    this.entities.wipe();
+    this.notes.wipe();
+  },
 
+  onmousedown: function (x, y) {
+	  var button = this.back;
+    if (button.opacity == 1 && isButtonClicked(x, y, button))
+    {
+      app.selectScene(app.songselect);
+    }
+  }
 });
